@@ -1,0 +1,42 @@
+Laboratorio AWS: Creación de una Api sin servidor 
+
+Fecha: 12/02/2025
+
+Objetivo: Al final del laboratorio podremos implementar una API mediante AWS SAM.
+
+Servicios usados: AWS SAM, Lambda, AWS Cloud9
+
+Pasos Realizados
+
+1.Configuración inicial:
+1.1. Primero nos conectaremos al entorno de AWS Cloud9 y revisaremos los archivos de la aplicación.
+1.2 Creación del paquete de implementación con sam build y implementación del paquete en entorno AWS con sam deploy.
+
+
+2.Implementación
+
+Codigo utilizado:
+
+import boto3
+s3 = boto3.client('s3')
+
+
+def lambda_handler(event, context):
+    obj = s3.get_object(Bucket='sourcefiles-us-east-1-280362791', Key='object1')
+    contents = "These are not the contents you are looking for."
+
+    return {"result": contents}
+
+Esta función de Lambda, recupera el contenido almacenado en un bucket S3 y devuelve como resultado el contenido de una variable estática.
+
+Plantilla de SAM.
+
+https://9kw8eiu6b8.execute-api.us-east-1.amazonaws.com/labfunction  
+3.Pruebas y validaciones
+
+4.Resultados y Observaciones
+
+5.Conclusión
+
+
+
